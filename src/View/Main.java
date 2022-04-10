@@ -16,11 +16,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MyView.fxml"));
         Parent root = fxmlLoader.load();
-        primaryStage.setTitle("Homework Maze");
+        primaryStage.setTitle("Maze-Project");
         Scene scene = new Scene(root,700,560);
         primaryStage.setScene(scene);
- //       primaryStage.minWidthProperty().bind(scene.heightProperty());
-//        primaryStage.minHeightProperty().bind(scene.widthProperty());
         primaryStage.show();
         BasicConfigurator.configure();
         IModel model = new MyModel();

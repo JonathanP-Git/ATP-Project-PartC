@@ -214,44 +214,6 @@ public class MazeDisplayer extends Canvas {
         drawMaze(charDirection);
     }
 
-//    public void drawSolution(Solution solution) {
-//        try {
-//            /*get Maze Canvas dimensions */
-//            double width = getWidth();
-//            double height = getHeight();
-//            /*get single cell dimesions */
-//            double cellHeight = height / maze.getMaze().length;
-//            double cellWidth = width / maze.getMaze()[0].length;
-//            /* create Image instance of the Solution-step Image */
-//            Image solutionPathImage = null;
-//            solutionPathImage = new Image(new FileInputStream(getImageSolution()));
-//            /* create Image instance of the Wall-Brick Image */
-//            Image wallImage = null;
-//            wallImage = new Image(new FileInputStream(getImageFileNameWall()));
-//            int[][] matrix = maze.getMaze();
-//            GraphicsContext graphicsContext = getGraphicsContext2D();
-//            /* reset the Maze canvas */
-//            graphicsContext.clearRect(0, 0, getWidth(), getHeight());
-//            /*Draw walls and goal point*/
-//            ArrayList<AState> path = solution.getSolutionPath();
-//            for (int i = 0; i < matrix.length; i++) {
-//                for (int j = 0; j < matrix[i].length; j++) {
-//                    if (matrix[i][j] == 1) {
-//                        graphicsContext.drawImage(wallImage, j * cellWidth, i * cellHeight, cellWidth, cellHeight);
-//                    }
-//                    /*if this cell is part of the path draw the solution path image */
-//                    AState p = new MazeState(i,j);//using generic AState makes sense design-wise
-//                    if (path.contains(p)) {
-//                        graphicsContext.drawImage(solutionPathImage, j * cellWidth, i * cellHeight, cellWidth, cellHeight);
-//                    }
-//                }
-//            }
-//            drawPlayerAndGoal(cellHeight,cellWidth,graphicsContext);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
     private void drawMaze(int direction) throws FileNotFoundException {
         if(maze != null){
             int [][] matrix = maze.getMaze();

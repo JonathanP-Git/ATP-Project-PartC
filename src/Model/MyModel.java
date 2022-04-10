@@ -311,8 +311,6 @@ public class MyModel extends Observable implements IModel {
         } catch (IOException e){
             e.printStackTrace();
         }
-
-
 }
 
     public static void changeProperty( String key, String value) throws IOException {

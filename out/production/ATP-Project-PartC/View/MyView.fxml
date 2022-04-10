@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<?import View.*?>
+<?import View.MazeDisplayer?>
+<BorderPane onMouseClicked="#mouseClicked" prefHeight="429.0" prefWidth="509.0" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+    <left>
+        <VBox fx:id="VBox" prefHeight="200.0" prefWidth="178.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <Label text="Maze rows:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Label text="Maze columns:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="textField_mazeRows" text="10" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <TextField fx:id="textField_mazeColumns" text="10" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Button onAction="#generateMaze" prefHeight="25.0" prefWidth="167.0" text="Generate Maze" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                    <Button onAction="#playMusic" prefHeight="20.0" prefWidth="150.0" text="Play Music" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                    <Button onAction="#stopMusic" prefHeight="20.0" prefWidth="150.0" text="Stop Music" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+                    <Button cancelButton="true" onAction="#solveMaze" prefHeight="25.0" prefWidth="167.0" text="Solve Maze" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                    <Label fx:id="lbl_player_r" text="Player Row" GridPane.rowIndex="4" />
+                    <Label fx:id="lbl_player_c" text="Player Column" GridPane.rowIndex="5" />
+                    <Label fx:id="lbl_player_row" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    <Label fx:id="lbl_player_column" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                </GridPane>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </VBox>
+    </left>
+    <bottom>
+        <HBox prefHeight="8.0" prefWidth="546.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Status bar" />
+            </children>
+        </HBox>
+    </bottom>
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#newGame" text="New" />
+                                <MenuItem mnemonicParsing="false" onAction="#saveGame" text="Save" />
+                                <MenuItem mnemonicParsing="false" onAction="#loadGame" text="Load" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Options">
+                            <items>
+
+                        <MenuItem mnemonicParsing="false" onAction="#changeSettings" text="Change Settings" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" onAction="#exitGame" text="Exit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#exitGame" text="Exit" />
+                            </items></Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#helpGame" text="help" />
+                            </items></Menu>
+                        <Menu mnemonicParsing="false" text="About">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#aboutGame" text="about" />
+                            </items></Menu>
+                    </menus>
+                </MenuBar>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <Pane fx:id="MainPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+            <children>
+                <MazeDisplayer fx:id="mazeDisplayer" onMouseDragged="#mouseDragged" onScroll="#mouseScroll" height="800.0" imageBackground1="./src/Resources/Images/BG1.jpeg" imageBackground2="./src/Resources/Images/BG2.jpeg" imageBackground3="./src/Resources/Images/BG3.jpeg" imageBackground4="./src/Resources/Images/BG4.jpeg" imageFileNamePlayer="./src/Resources/Images/sonic.png" imageFileNameWall="./src/Resources/Images/grass.jpeg" imageGoalIcon="./src/Resources/Images/goal.png" imagePlayerDown="./src/Resources/Images/CharDown.png" imagePlayerLeft="./src/Resources/Images/Charleft.png" imagePlayerRight="./src/Resources/Images/CharRight.png" imagePlayerUp="./src/Resources/Images/CharUp.png" imageSolution="./src/Resources/Images/sol.jpeg" imageFinish="./src/Resources/Images/finish.png" imageTree="./src/Resources/Images/tree.png" onKeyPressed="#keyPressed" width="800.0" />
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </Pane>
+    </center>
+</BorderPane>

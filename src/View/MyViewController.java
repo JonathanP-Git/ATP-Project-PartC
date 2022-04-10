@@ -63,7 +63,7 @@ public class MyViewController implements Initializable, Observer {
     public javafx.scene.Node GridPane_newMaze;
     public BorderPane borderPane;
     private Stage primaryStage;
-    private MediaPlayer mp;//Media player
+    private MediaPlayer mp; //Media player
     private boolean changedSettings = false;
     StringProperty update_player_position_row = new SimpleStringProperty();
     StringProperty update_player_position_col = new SimpleStringProperty();
@@ -189,7 +189,7 @@ public class MyViewController implements Initializable, Observer {
     public  void  changeSettings(){
         try{
             Stage helpStage = new Stage();
-            helpStage.setTitle("changeSettings");
+            helpStage.setTitle("Settings");
             FXMLLoader fxmlLoader = new FXMLLoader();
             Parent root = fxmlLoader.load(getClass().getResource("Properties.fxml").openStream());
             Scene scene = new Scene(root, 315, 400);//possible to specify w and h
@@ -350,12 +350,7 @@ public class MyViewController implements Initializable, Observer {
     private  double mouseDraggedCheck(int maxsize, double canvasSize, int mazeSize,double mouseEvent,double temp,double extra){
         double cellSize=canvasSize/maxsize;
         double start = (canvasSize / 2 - (cellSize * mazeSize / 2)) / cellSize ;
-//        System.out.println("Start" + start);
-//        System.out.println("Extra " + extra);
-//        System.out.println("Mouse event "+mouseEvent);
-//        System.out.println("Temp " +temp );
         double mouse = (int) (((mouseEvent) - start ) / temp);
-//        System.out.println("Mouse "+ mouse);
         return mouse;
     }
 

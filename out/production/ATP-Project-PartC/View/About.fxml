@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="307.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AboutController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="312.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/Resources/Images/background2.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="113.0" layoutY="200.0" mnemonicParsing="false" onAction="#aboutUs" text="About Us" textFill="#193b65">
+         <font>
+            <Font name="Dubai Medium" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="84.0" layoutY="136.0" mnemonicParsing="false" onAction="#aboutProject" text="About The Project" textFill="#193b65">
+         <font>
+            <Font name="Dubai Medium" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

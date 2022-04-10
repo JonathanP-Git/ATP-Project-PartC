@@ -18,32 +18,32 @@
         <ChoiceBox fx:id="mazeGenerator" layoutX="78.0" layoutY="179.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
 
 
-        <Label layoutX="41.0" layoutY="65.0" prefHeight="25.0" prefWidth="108.0" text="Select a desired " textFill="#341265">
+        <Label layoutX="41.0" layoutY="65.0" text="Select a desired" textFill="#341265">
             <font>
                 <Font name="Dubai Medium" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="139.0" layoutY="65.0" text="searching algoritem" textFill="#341265">
+        <Label layoutX="139.0" layoutY="65.0" text="searching algorithm" textFill="#341265">
             <font>
                 <Font name="Dubai Medium" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="68.0" layoutY="149.0" prefHeight="25.0" prefWidth="108.0" text="Select a desired " textFill="#341265">
+        <Label layoutX="68.0" layoutY="149.0"  text="Select a desired" textFill="#341265">
             <font>
                 <Font name="Dubai Medium" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="165.0" layoutY="149.0" text="generator" textFill="#341265">
+        <Label layoutX="165.0" layoutY="149.0" text="maze generator" textFill="#341265">
             <font>
                 <Font name="Dubai Medium" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="82.0" layoutY="219.0" prefHeight="25.0" prefWidth="108.0" text="Enter Thread" textFill="#341265">
+        <Label layoutX="82.0" layoutY="219.0"  text="Enter thread" textFill="#341265">
             <font>
                 <Font name="Dubai Medium" size="14.0" />
             </font>
         </Label>
-        <Label layoutX="160.0" layoutY="219.0" text="Pool size" textFill="#341265">
+        <Label layoutX="160.0" layoutY="219.0" text="pool size" textFill="#341265">
             <font>
                 <Font name="Dubai Medium" size="14.0" />
             </font>
